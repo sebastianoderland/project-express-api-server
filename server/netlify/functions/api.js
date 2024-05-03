@@ -1,10 +1,12 @@
 import express from "express"
 import serverless from "serverless-http"
-// import cors from "cors"
+import cors from "cors"
 import listEndpoints from "express-list-endpoints"
 import avocadoSalesData from "../../data/avocado-sales.json"
 
 const api = express()
+
+api.use(cors())
 
 function getTopSales() {
     const sortedSales = avocadoSalesData.sort(
