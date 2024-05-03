@@ -2,10 +2,10 @@
     "name": "frontend",
     "version": "0.1.0",
     "scripts": {
-        "start": "PORT=3001 react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
+        "start": "cd frontend && PORT=3001 react-scripts start",
+        "build": "cd frontend && react-scripts build",
+        "test": "cd frontend && react-scripts test",
+        "eject": "cd frontend && react-scripts eject",
         "start-server": "babel-node server.js",
         "dev-server": "nodemon server.js --exec babel-node"
     },
