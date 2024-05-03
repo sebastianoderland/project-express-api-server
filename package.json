@@ -11,13 +11,23 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@babel/core": "^7.17.9",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-list-endpoints": "^7.1.0",
+    "nodemon": "^3.0.1",
+    "serverless-http": "^3.2.0"
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+    // "start": "babel-node server.js",
+    // "dev": "nodemon server.js --exec babel-node"
   },
   "eslintConfig": {
     "extends": [

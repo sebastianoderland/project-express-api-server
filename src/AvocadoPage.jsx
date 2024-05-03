@@ -2,28 +2,37 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import "./App.css"
 
-function MostExpensiveAvocados() {
+function AvocadoPage() {
   const [avocados, setAvocados] = useState([])
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/sales/mostExpensive")
+      .get("/api/sales/topBagsSold")
       .then((response) => {
         setAvocados(response.data)
       })
       .catch((error) => {
         console.error("There was an error!", error)
       })
+    // useEffect(() => {
+    //   request("sales/topBagsSold").then((response) => {
+    //     setAvocados(response.data)
+    //   }).catch((error) => {
+    //     console.error("There was an error!", error)
+    //   })
   }, [])
 
   return (
     <div className="Page">
-      <h1>Most expensive avocados:</h1>
+      <div className="Titlepage">
+        <h1>Best selling avocados:</h1>
+      </div>
       {avocados.map((avocado) => (
         <div key={avocado.id}>
           <h2>{avocado.region}</h2>
+
           <p className="p-style">
-            Average price per bag: {avocado.averagePrice}
+            Number of bags sold: {avocado.totalBagsSold}
           </p>
         </div>
       ))}
@@ -31,4 +40,4 @@ function MostExpensiveAvocados() {
   )
 }
 
-export default MostExpensiveAvocados
+export default AvocadoPage
