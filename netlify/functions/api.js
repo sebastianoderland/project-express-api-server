@@ -1,18 +1,18 @@
 import express, { Router } from "express"
 import serverless from "serverless-http"
-import cors from "cors"
+// import cors from "cors"
 import listEndpoints from "express-list-endpoints"
 import avocadoSalesData from "../../data/avocado-sales.json"
 
 const api = express()
 const router = Router()
 
-function getTopSales() {
-    const sortedSales = avocadoSalesData.sort(
-        (a, b) => b.totalBagsSold - a.totalBagsSold,
-    )
-    return sortedSales
-}
+// function getTopSales() {
+//     const sortedSales = avocadoSalesData.sort(
+//         (a, b) => b.totalBagsSold - a.totalBagsSold,
+//     )
+//     return sortedSales
+// }
 
 function getSalesByDate() {
     const salesWithDateObjects = avocadoSalesData.map((sale) => ({
@@ -237,7 +237,7 @@ router.get("/sales/:id", (req, res) => {
     }
 })
 
-api.use(cors())
+// api.use(cors())
 api.use("/api/", router)
 
 export const handler = serverless(api)

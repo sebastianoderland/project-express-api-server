@@ -4,9 +4,9 @@ node_bundler = "esbuild"
 [build]
 command = "npm run build"
 publish = "build"
-functions = "server/netlify/functions"
+functions = "netlify/functions"
 [[redirects]]
 force = true
 from = "/api/*"
 status = 200
-to = "/server/netlify/functions/api/:splat"
+to = "/.netlify/functions/api/:splat"
